@@ -19,5 +19,7 @@ systemctl enable --now snapper-cleanup.timer
 
 # install and configure grub-btrfs
 sed -i 's/#GRUB_BTRFS_SHOW_SNAPSHOTS_FOUND/GRUB_BTRFS_SHOW_SNAPSHOTS_FOUND/' /etc/default/grub-btrfs/config
+sed -i 's/#GRUB_BTRFS_IGNORE_SNAPSHOT_TYPE=("")/GRUB_BTRFS_IGNORE_SNAPSHOT_TYPE=("pre" "post")/' /etc/default/grub-btrfs/config
+
 systemctl enable --now grub-btrfs.path
 
