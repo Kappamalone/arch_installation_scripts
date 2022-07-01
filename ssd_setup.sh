@@ -6,8 +6,8 @@ mount_options='defaults,noatime,ssd,space_cache=v2,compress-force=zstd:1'
 sed -i 's/rw,relatime,ssd,space_cache=v2/'"$mount_options"'/g' /etc/fstab 
 
 # Setup swapfile on separate subvolume
-root_partition='nvme0n1p2'
-UUID='8741e939-cb6d-4aa0-b7d1-8cbd737b10f1'
+root_partition=''
+UUID=''
 swap_size=8192 # size of swapfile in megabytes
 
 mount /dev/"$root_partition" /mnt
@@ -26,5 +26,4 @@ echo "UUID=$UUID /swap btrfs defaults,noatime,subvol=@swap 0 0" >> /etc/fstab
 echo "/swap/swapfile none swap sw 0 0" >> /etc/fstab
 
 # Setup weekly fstrim
-pacman -S util-linux
 systemctl enable --now fstrim.timer
