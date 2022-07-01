@@ -1,0 +1,46 @@
+{
+    "bootloader": "grub-install",
+    "config_version": "2.5.0",
+    "debug": false,
+    "harddrives": [
+        "/dev/nvme0n1"
+    ],
+    "mirror-region": {
+        "India": {
+            "http://archlinux.mirror.net.in/archlinux/$repo/os/$arch": true,
+            "http://in-mirror.garudalinux.org/archlinux/$repo/os/$arch": true,
+            "http://mirror.sahil.world/archlinux/$repo/os/$arch": true,
+            "http://mirrors.nxtgen.com/archlinux-mirror/$repo/os/$arch": true,
+            "http://mirrors.piconets.webwerks.in/archlinux-mirror/$repo/os/$arch": true,
+            "https://archlinux.mirror.net.in/archlinux/$repo/os/$arch": true,
+            "https://archmirror.akhl.in/$repo/os/$arch": true,
+            "https://in-mirror.garudalinux.org/archlinux/$repo/os/$arch": true,
+            "https://mirror.sahil.world/archlinux/$repo/os/$arch": true,
+            "https://mirrors.nxtgen.com/archlinux-mirror/$repo/os/$arch": true,
+            "https://mirrors.piconets.webwerks.in/archlinux-mirror/$repo/os/$arch": true,
+            "https://repo.albony.xyz/$repo/os/$arch": true
+        }
+    },
+    "mount_point": null,
+    "nic": {
+        "dhcp": true,
+        "dns": null,
+        "gateway": null,
+        "iface": null,
+        "ip": null,
+        "type": "nm"
+    },
+    "packages": [
+        "neovim",
+        "git"
+    ],
+    "plugin": null,
+    "profile": {
+        "path": "/usr/lib/python3.10/site-packages/archinstall/profiles/minimal.py"
+    },
+    "script": "guided",
+    "silent": false,
+    "swap": false,
+    "timezone": "Asia/Colombo",
+    "version": "2.5.0"
+}

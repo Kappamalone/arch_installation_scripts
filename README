@@ -1,0 +1,9 @@
+These scripts serve to bring an archinstall system up and running quickly.
+This is to anticipate the fact that I will probably end up nuking my system for the nth time.
+
+How to run:
+change variables in ssd_setup.sh
+chmod +x main_setup.sh
+./main_setup.sh
+
+
