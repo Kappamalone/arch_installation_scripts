@@ -6,9 +6,6 @@ mount_options='defaults,noatime,ssd,space_cache=v2,compress-force=zstd:1'
 sed -i 's/rw,relatime,ssd,space_cache=v2/'"$mount_options"'/g' /etc/fstab 
 
 # Setup swapfile on separate subvolume
-root_partition='nvme0n1p2'
-UUID=''
-swap_size=8192 # size of swapfile in megabytes
 
 mount /dev/"$root_partition" /mnt
 btrfs subvolume create /mnt/@swap

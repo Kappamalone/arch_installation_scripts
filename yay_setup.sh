@@ -2,9 +2,9 @@
 
 if [ ! -d '~/yay' ]; then
 	cwd=$PWD
-	mkdir ~/yay
-	git clone https://aur.archlinux.org/yay ~/yay
-	cd ~/yay
+	mkdir /home/"$user"/yay
+	git clone https://aur.archlinux.org/yay /home/"$user"/yay
+	cd /home/"$user"/yay
 	makepkg -si 
 	cd "$cwd" 
 fi
