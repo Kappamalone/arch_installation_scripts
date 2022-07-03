@@ -13,7 +13,7 @@ fi
 
 # copy over snapper config and give current user permissions
 sudo cp -f configs/snapper/root /etc/snapper/configs/root
-sudo sed -i 's/ALLOW_USERS=""/ALLOW_USERS="'"$user"'"/g' /etc/snapper/configs/root 
+sudo sed -i 's/ALLOW_USERS=""/ALLOW_USERS="'"$USER"'"/g' /etc/snapper/configs/root 
 sudo systemctl enable --now snapper-timeline.timer
 sudo systemctl enable --now snapper-cleanup.timer
 
@@ -22,4 +22,11 @@ sudo sed -i 's/#GRUB_BTRFS_SHOW_SNAPSHOTS_FOUND/GRUB_BTRFS_SHOW_SNAPSHOTS_FOUND/
 sudo sed -i 's/#GRUB_BTRFS_IGNORE_SNAPSHOT_TYPE=("")/GRUB_BTRFS_IGNORE_SNAPSHOT_TYPE=("pre" "post")/' /etc/default/grub-btrfs/config
 
 sudo systemctl enable --now grub-btrfs.path
+
+# setup snapper-rollback so that it actually works
+rollbackAlreadyConfigured=$(cat /etc/snapper-rollback.conf | grep -c "dev = $root_partition")
+sudo sed -i 's/subvol_snapshots = @snapshots/subvol_snapshots = @.snapshots/' /etc/snapper-rollback.conf
+if [ $rollbackAlreadyConfigured -eq 0 ]; then
+	echo "dev = $root_partition" | sudo tee -a /etc/snapper-rollback.conf
+fi
 

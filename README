@@ -6,7 +6,7 @@ How to run:
 From live usb:
 pacman -Sy git
 git clone https://github.com/kappamalone/arch_installation_scripts
-archinstall --config arch_installation_scripts/configs/user_configuration.json --disk-layout arch_installation_scripts/configs/user_disk_layout.json
+archinstall --config arch_installation_scripts/configs/archinstall/user_configuration.json --disk-layout arch_installation_scripts/configs/archinstall/user_disk_layout.json
 
 After archinstall finishes, exit back into live usb and do:
 cp -r arch_installation_scripts /mnt/archinstall/home/{your_username}/

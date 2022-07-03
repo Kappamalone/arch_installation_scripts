@@ -1,12 +1,11 @@
 #!/bin/bash
 
-sudo pacman -S git
-yay_dir=/home/"$user"/yay
-
-if [ ! -d "$yay_dir" ]; then
+if [ ! -d ~/yay ]; then
 	cwd=$PWD
-	git clone https://aur.archlinux.org/yay "$yay_dir"
-	cd "$yay_dir"
+	git clone https://aur.archlinux.org/yay ~/yay 
+	cd ~/yay 
 	makepkg -si
 	cd "$cwd" 
 fi
+
+yay -S github-cli paleofetch-git snapper-rollback

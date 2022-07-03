@@ -8,9 +8,9 @@ sudo sed -i 's/'"$archinstall_mount_options"'/'"$custom_mount_options"'/g' /etc/
 
 # Setup swapfile on separate subvolume
 
-swapAlreadyCreated=$(cat etc/fstab | grep -c "UUID=$UUID /swap btrfs defaults,noatime,subvol=@swap 0 0")
+swapAlreadyCreated=$(cat /etc/fstab | grep -c "UUID=$UUID /swap btrfs defaults,noatime,subvol=@swap 0 0")
 
-if [ $swapAlreadyCreated -eq 0 ]; then
+if [ $swapAlreadyCreated -eq 0 ] && [ ! -z $UUID]; then
 	sudo mount "$root_partition" /mnt
 	sudo btrfs subvolume create /mnt/@swap
 	sudo umount /mnt

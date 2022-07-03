@@ -2,9 +2,6 @@
 
 # configure variables here
 
-# Users
-user=''
-
 # WIFI
 SSID=''
 SSID_passwd=''
