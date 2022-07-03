@@ -30,6 +30,9 @@
         "ip": null,
         "type": "nm"
     },
+    "packages": [
+        "neovim"
+    ],
     "plugin": null,
     "profile": {
         "path": "/usr/lib/python3.10/site-packages/archinstall/profiles/minimal.py"

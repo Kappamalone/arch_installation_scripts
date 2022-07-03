@@ -1,11 +1,13 @@
 #!/bin/bash
 
-source variables.sh
+source ./variables.sh
+. scripts/wifi_setup.sh
+. scripts/yay_setup.sh 
+. scripts/package_setup.sh
+. scripts/reflector_setup.sh
+. scripts/ssd_setup.sh
+. scripts/snapper_setup.sh
+. scripts/git_setup.sh
+. scripts/dotfiles_setup.sh 
 
-./wifi_setup.sh
-./package_setup.sh
-./yay_setup.sh
-./ssd_setup.sh
-./snapper_setup.sh
-./git_setup.sh
-./dotfiles_setup.sh
+echo "Done! You should probably reboot now"

@@ -2,8 +2,23 @@ These scripts serve to bring an archinstall system up and running quickly.
 This is to anticipate the fact that I will probably end up nuking my system for the nth time.
 
 How to run:
-change variables in ssd_setup.sh
-chmod +x main_setup.sh
-./main_setup.sh
+
+From live usb:
+pacman -Sy git
+git clone https://github.com/kappamalone/arch_installation_scripts
+archinstall --config arch_installation_scripts/configs/user_configuration.json --disk-layout arch_installation_scripts/configs/user_disk_layout.json
+
+After archinstall finishes, exit back into live usb and do:
+cp -r arch_installation_scripts /mnt/archinstall/home/{your_username}/
+reboot now
+
+Then, from you fresh arch linux install:
+sudo chown -R $USER:$USER ~/arch_installation_scripts
+cd arch_installation_scripts
+
+Finally, use a text edtor to configure variables.sh, configs/snapper/root and configs/reflector/reflector.conf. 
+Now run:
+chmod +x setup.sh
+./setup.sh
 
 
