@@ -16,7 +16,8 @@ Then, from you fresh arch linux install:
 sudo chown -R $USER:$USER ~/arch_installation_scripts
 cd arch_installation_scripts
 
-Finally, use a text edtor to configure variables.sh, configs/snapper/root and configs/reflector/reflector.conf. 
+Finally, use a text editor to edit `variables.sh` and the files in `configs/`
+For git, create a `token.txt` file and type your PAT in there
 Now run:
 chmod +x setup.sh
 ./setup.sh
